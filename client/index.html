@@ -15,7 +15,11 @@
 	<style>
 		html 					{ overflow-y:scroll; }
 		body 					{ padding-top:50px; }
-		#todo-list 				{ margin-bottom:30px; }
+		#todo-list 				{margin-bottom:30px;}
+		checkbox{                        
+			.checked{ background-color:#f0f0f0; color:#666; }
+                        .checked { text-decoration: line-through; }
+		}
 		#todo-form 	 			{ margin-bottom:50px; }
 	</style>
 
@@ -40,9 +44,9 @@
 		<div id="todo-list" class="row">
 			<div class="col-sm-4 col-sm-offset-4">
 
-				<div class="checkbox"  ng-repeat="todo in todos">
+				<div class="checkbox" ng-repeat="todo in todos">
                                   <label>
-                                  <input type="checkbox"> {{ todo.text }}
+                                  	<input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
                                   </label>
                                  </div>
                              
